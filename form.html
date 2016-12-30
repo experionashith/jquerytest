@@ -19,15 +19,30 @@
 
   <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-  <!-- Javascript -->
-  <script>
 
-  </script>
+  <script type="text/javascript">
+   function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+
+
+          function toggle_visibility1(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+   }
+   }
+</script>
 </head>
 <body>
 
   <div class="rows row1">
-               <h1><b>MY FORM</b></h1>
+               <h1><b>ACCIDENT REGISTRY</b></h1>
            </div>
 
 
@@ -37,33 +52,10 @@
 
 <div class="container">
   <div class="row content">
-<div class="col-sm-2 ">
+<div class="col-sm-1 ">
   </div>
-  <div class="col-sm-8 ">
+  <div class="col-sm-10 ">
 
-      <h2>Details Table</h2>
-
-      <table class="table" id="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>DOB</th>
-            <th>DEPARTMENT</th>
-          </tr>
-        </thead>
-          <tr>
-            <td>100</td>
-            <td>Doe</td>
-            <td>12-12-1994</td>
-            <td>Developer</td>
-          </tr>
-
-
-
-
-        </tbody>
-      </table>
 
 
 
@@ -73,30 +65,70 @@
 
         <form>
           <div class="form-group">
-            <label for="ID">ID:</label>
-            <input type="text" class="form-control" id="id" placeholder="Enter ID">
+            <label for="refnum">Reference Number</label>
+            <input type="text" class="form-control" id="refnum" placeholder="Enter Reference Number">
           </div>
           <div class="form-group">
-            <label for="Name">NAME:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter Name">
-          </div>
-          <div class="form-group">
-            <label for="Date">DOB:</label>
+            <label for="Accdate">Accident Date</label>
             <input type="text" class="form-control date" id="datepicker-13" placeholder="Select Date ">
           </div>
+          <div class="form-group">
+            <label for="acctime">Accident Time</label>
+            <input type="time" class="form-control" id="time" placeholder="Enter Accident Time">
+          </div>
+          <div class="form-group">
+            <label for="acctype">Accident Type</label>
+             <select class="form-control" id="acctype">
+              <option>select</option>
+                <option>Hit Pedestrian</option>
+                <option>Head On</option>
+                <option>Side Swipe</option>
+                <option>Hit from Rear</option>
+                <option>Hit Animal</option>
+                <option>Ran off the Road</option>
+              </select>
+              </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control date" id="city" placeholder="Enter City">
+          </div>
             <div class="form-group">
-              <label for="Department">DEPARTMENT:</label>
-               <select class="form-control" id="empDept">
+              <label for="district">District</label>
+               <select class="form-control" id="district">
 								<option>select</option>
-    							<option>QA</option>
-    							<option>BA</option>
-    							<option>DEV</option>
-    							<option>Other</option>
+    							<option>Alappuzha</option>
+    							<option>Ernakulam</option>
+    							<option>Idukki</option>
+    							<option>Kannur</option>
+                  <option>Kasaragod</option>
+    							<option>Kollam</option>
+    							<option>Kottayam</option>
+    							<option>Kozhikode</option>
+                  <option>Malappuram</option>
+    							<option>Palakkad</option>
+    							<option>Pathanamthitta</option>
+    							<option>Thiruvananthapuram</option>
+                  <option>Thrissur</option>
+    							<option>Wayanad</option>
     						</select>
                 </div>
-          <button type="submit" class="btn btn-default" id="add">Submit</button>
-          <button type="reset" class="btn btn-default"id="clear">Reset</button>
 
+                <div class="form-group">
+                  <label for="noofveh">Number of Vehicles</label>
+                  <input type="text" class="form-control date" id="noofveh" placeholder="Enter Number of Vehicles">
+                </div>
+                <div class="form-group">
+                  <label for="noofcas">Number of Casualties</label>
+                  <input type="text" class="form-control date" id="noofcas" placeholder="Enter Number of Casualties">
+                </div>
+                <div class="form-group">
+                  <label for="repofname">Reporting Officer Name</label>
+                  <input type="text" class="form-control date" id="repofname" placeholder="Enter Reporting Officer Name">
+                </div>
+
+          <button type="submit" class="btn btn-default" id="add" onclick="toggle_visibility('show');">Save</button>
+          <button type="reset" class="btn btn-default"id="clear">Reset</button>
+<br><br><br><br>
           <div id="dialog-message" title="Employee added" style="display:none;">
   <p>
     <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
@@ -105,13 +137,37 @@ Employee added successfully.  </p>
 
         </form>
 
+<div id="show">
+        <h2>Details Table</h2>
+
+        <table class="table" id="table">
+          <thead>
+            <tr>
+              <th>Ref No</th>
+              <th>Accident Date</th>
+              <th>Accident Time</th>
+              <th>Accident Type</th>
+              <th>District</th>
+              <th>No of Vehicles</th>
+              <th>No of Casuality</th>
+              <th>repofname</th>
+            </tr>
+          </thead>
 
 
 
 
+
+          </tbody>
+        </table>
+
+                  <button type="submit" class="btn btn-default" id="add1">Confirm</button>
+                  <button type="submit" class="btn btn-default"id="add2" onclick="toggle_visibility('show');">Edit</button>
+<br><br><br><br>
+</div>
   </div>
 
-  <div class="col-sm-2 ">
+  <div class="col-sm-1 ">
   </div>
 </div>
 </div>
