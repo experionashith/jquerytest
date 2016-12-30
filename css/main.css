@@ -1,0 +1,68 @@
+ p {
+  text-align:justify;
+     }
+  .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      }
+
+    .row.content {height: auto}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: none;
+      height: 100%;
+    }
+
+    .row1{
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.row2{
+background-color: black;
+color: white;
+font-size: 30px;
+padding-left: 10px;
+padding-top: 20px;
+padding-bottom: 0px;
+}
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 0px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+    .button{
+            float:right;
+            width: 60px;
+            margin-top:0px;
+            padding:3px;
+            background-color:black;
+            color:white;
+        }
+        .submit{
+            padding:3px;
+            background-color:black;
+            color:white;
+        }
+        .boxform{
+          margin-top: 20px;
+          width: 360px;
+          padding: 20px 10px;
+          border: 1px solid grey !important;
+          float: right;
+          }
